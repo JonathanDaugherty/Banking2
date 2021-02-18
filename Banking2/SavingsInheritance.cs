@@ -7,16 +7,19 @@ namespace Banking2 {
         
         public decimal InterestRate { get; set; } = 0.12m;
 
-        private decimal Interest(int months) {
-            return Balance * (InterestRate / 12) * months;
-        }
-
-        public void PayInterest(int months) {
-            var interest = Interest(months);
+        public void PayInterest (int months) {
+            var interest = Balance * (InterestRate / 12) * months;
             Deposit(interest);
         }
-       
-        public SavingsInheritance() { }
+        
+        public SavingsInheritance() : base() { }
+
+        public SavingsInheritance(string AcctNbr, string Desc) : base(AcctNbr, Desc) { }
+        
+        public SavingsInheritance(string AcctNbr, decimal IntRate) : base(AcctNbr, "New Savings Account") {
+            this.InterestRate = IntRate;        
+        }
 
     }
+
 }

@@ -3,12 +3,13 @@
 namespace Banking2 {
     class Program {
         static void Main(string[] args) {
-
-            var sav1 = new SavingsComposition();
+            
+            var sav1 = new SavingsInheritance();
+            var sav2 = new SavingsComposition();
             sav1.InterestRate = 0.13m;
             sav1.Deposit(50);
-            sav1.Withdraw(20);
-            sav1.Withdraw(50);
+            sav1.withdraw(20);
+            sav1.withdraw(50);
             sav1.Deposit(-20);
             sav1.Deposit(70);
             Console.WriteLine($"Balance is {sav1.Balance}");
